@@ -19,3 +19,14 @@
 *.exe
 *.out
 *.app
+
+# Others
+*.pdf
+*.log
+*.aux
+*.nav
+*.snm
+*.toc
+*.vrb
+*.dvi
+*.sinctex.gz
