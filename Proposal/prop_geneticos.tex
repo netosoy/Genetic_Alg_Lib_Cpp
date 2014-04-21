@@ -1,0 +1,113 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[activeacute,english]{babel}
+\usepackage[vmargin=4cm,tmargin=3cm,hmargin=2cm,letterpaper]{geometry}%
+\usepackage{helvet}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{tabls}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{listings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{plot}
+\usepackage{wrapfig}
+\usetikzlibrary{arrows,decorations,snakes,backgrounds,fit,calc,through,scopes,positioning,automata,chains,er,fadings,calendar,matrix,mindmap,folding,patterns,petri,plothandlers,plotmarks,shadows,shapes,shapes.arrows,topaths,trees}
+
+\lstset{% general command to set parameter(s)
+%   basicstyle=\small,
+  % print whole listing small
+%   keywordstyle=\color{black}\bfseries\underbar,
+  % underlined bold black keywords
+%   identifierstyle=,
+  % nothing happens
+%   commentstyle=\color{white}, % white comments
+%   stringstyle=\ttfamily,
+  % typewriter type for strings
+  showstringspaces=false}
+  % no special string spaces
+%\DeclareGraphicsExtensions{.bmp,.png,.pdf,.jpg,.eps}
+\pagestyle{fancy}
+\color{black}
+\fancyhead{}
+\renewcommand{\headrule}{\hrule\vspace*{0.5mm}\rule{\linewidth}{0.8mm}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{/home/luis/Documents/estructuras}}
+\lhead{\includegraphics[width=2cm]{logoucr.eps}}
+\rhead{\includegraphics[width=3cm]{eie-text-gray-6x3cm.eps}}
+\chead{UNIVERSITY OF COSTA RICA\\FACULTY ENGINEERING\\ELECTRICAL ENGINENEERING SCHOOL\\\textbf{DATA STRUCTURES AND ALGORITHMS ABSTRACT\\ FOR ENGINEERING}\\IE-0217\\CYCLE I 2014\\BIBLIOGRAPHIC RESEARCH 1}
+
+\lfoot{}%
+\cfoot{}%
+%\cfoot{\thepage\ de \pageref{LastPage}}%
+\rfoot{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uic}{black} %user-input color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uim}{\\} %user-input marker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\userinput}[1]{\textcolor{\uic}{\uim#1\uim}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}\vspace*{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\Huge
+\userinput{FLOYD-WARSHALL Algorithm}
+\vspace*{1cm}
+\end{center}
+
+\noindent
+\small\baselineskip=14pt
+\textbf{Student:} \userinput{Luis Sergio Yannicelli Vargas}\\
+\textbf{License:} \userinput{A87086}\\
+\textbf{Email:} \textit{lsyannnicelli@gmail.com}\\
+
+
+\section{Introduction}
+
+\section{Objectives}
+
+\subsection{General Objective}
+
+\subsection{Specific Objectives}
+
+Specific Objectives are:\\
+
+\begin{enumerate}
+\item To understand graphos method as search algorithm.
+\item To describe Floyd-Warshall method and some algorithms used for its implementation. 
+\item To identify some applications in which this algorithm could be efficient.
+\end{enumerate}
+
+\section{Methodology}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.8\linewidth]{ejemplo_grafo2.eps}
+%\caption{Grapho's Example}
+%\label{F:ejemplo_grafo}
+%\end{figure}
+
+\begin{thebibliography}{99}
+\bibitem{Floyd}
+Consultado el 25 de marzo de 2014, en: http://dalila.sip.ucm.es/~manuel/Informatica/FloydWarshall.pdf
+
+\bibitem{Grafo}
+Consultado el 25 de marzo de 2014, en: http://www.fing.edu.uy/inco/grupos/bioinf/bioinfo1/teorico/grafos.pdf
+
+\end{thebibliography}
+
+\end{document}
