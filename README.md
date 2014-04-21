@@ -1,4 +1,6 @@
-Genetic_Alg_Lib_C--
+Genetic_Alg_Lib_Cpp
 ===================
 
-An implementation of a C++ library for Genetic Algorithms
+This is a library created for using genetic algorithms.
+
+For installation instructions please read the INSTALL insider the doc/ directory
