@@ -76,7 +76,7 @@
 \textbf{Email:} \textit{netosoy@gmail.com, vrlrdo@gmail.com, lsyannnicelli@gmail.com}\\
 
 \section{Introduction}
-In the present days, technologic growth specially in the programming field, represents and important issue, taking big part on solving a variety of topics, implementing algorithms as a tool. * Genetic algorithms are evolutionary algorithms, more broadly belonging to the Biologically Inspired Computation, useful for optimization problems. Its structure is inspired firmly on the field of genetics and Mendelian biology, specifically populations, gene frequency, chromosomes, genes, alleles, and so on in terms related to genetics; on the other hand it applies genetic processes such as evolution, mutation, heredity and others to polish the code and improve the algorithm's efficiency on optimization.
+In the present days, technologic growth specially in the programming field, represents and important issue, taking big part on solving a variety of topics, implementing algorithms as a tool. * Genetic algorithms are evolutionary algorithms, more broadly belonging to the Biologically Inspired Computation, useful for optimization problems. Its structure is inspired firmly on the field of genetics and Mendelian biology, specifically populations, gene frequency, chromosomes, genes, alleles, and so on in terms related to genetics; on the other hand it applies genetic processes such as evolution, recombination, mutation, heredity and others to improve the algorithm's efficiency for its goal which is combinatorial optimization.
 
 \section{Objectives}
 
@@ -95,6 +95,12 @@ Specific Objectives are:\\
 \end{enumerate}
 
 \section{Methodology}
+
+La finalidad de proyecto será la de crear una librería abierta de algoritmos genéticos en lenguaje C++, en otras palabras, se pretende crear un directorio de archivos de cabecera (.h) que contenga todas las declaraciones de las funciones de la librería y otro directorio de archivos fuente (.cpp) que contenga la implementación de las funciones. La librearía a crear será una librería dinámica por lo que se pretende crear un archivo .so final, el cual será compilado por medio de la herramienta CMake.
+
+La implementación de las funciones se basará en estudios bibliográficos sobre la teoría general de los algoritmos genéticos para entender la estructura de dato a implementar en las funciones de inicialización, evaluación, selección, cruzamiento, mutuación y remplazo. Además se pretende buscar pseudocódigos o implementaciones en otros lenguajes de las funciones mencionadas, para que junto con la investigación bibliográfica, se comprenda la estructura de estas y se esté en capacidad de implementar de manera de manera propia los algoritmos mencionados.
+
+
 
 %\begin{figure}
 %\centering
