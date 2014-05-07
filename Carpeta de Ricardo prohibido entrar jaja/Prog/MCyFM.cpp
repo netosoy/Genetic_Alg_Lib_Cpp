@@ -4,10 +4,15 @@
 #include <time.h>
 #include <math.h>
 
+using namespace std;
 
+int indiv1 []= {0,1,2,3,4}
+int indiv2 []= {5,6,7,8,9}
 
-    // Crossover individuals
-    private static Individual crossover(Individual indiv1, Individual indiv2) {
+double uniformRate = 0.5;
+ 
+    // Crossover individualsr
+    private static Individual_crossover (Individual indiv1, Individual indiv2) {
         Individual newSol = new Individual();
         // Loop through genes
         for (int i = 0; i < indiv1.size(); i++) {
