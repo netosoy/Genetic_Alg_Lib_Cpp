@@ -54,22 +54,22 @@ void CROSSOVER(int x[], int y[]){
 	srand (time(NULL));
 
   /* generate secret number between 1 and 10: */
-	CROSSPOINT = rand() % 9 + 1;	
+	CROSSPOINT = rand() % 5 + 1;	
   //cout << CROSSPOINT;
 
 switch(CROSSPOINT){
 	
 case 1:
 son2[1]=x[1];
-son2[2]=y[1];
-son2[3]=y[2];
-son2[4]=y[3];
-son2[5]=y[4];
-son2[6]=y[5];
-son2[7]=y[6];
-son2[8]=y[7];
-son2[9]=y[8];
-son2[10]=y[9];
+son2[2]=x[2];
+son2[3]=x[3];
+son2[4]=x[4];
+son2[5]=y[5];
+son2[6]=y[6];
+son2[7]=y[7];
+son2[8]=y[8];
+son2[9]=y[9];
+son2[10]=y[10];
 
 for (int w=0; w<9; w++){
 		cout << son2[w]<<", ";
@@ -82,14 +82,32 @@ case 2:
 
 son2[1]=x[1];
 son2[2]=x[2];
-son2[3]=y[1];
-son2[4]=y[2];
-son2[5]=y[3];
-son2[6]=y[4];
-son2[7]=y[5];
-son2[8]=y[6];
-son2[9]=y[7];
-son2[10]=y[8];
+son2[3]=x[3];
+son2[4]=x[4];
+son2[5]=y[5];
+son2[6]=y[6];
+son2[7]=y[7];
+son2[8]=y[8];
+son2[9]=x[9];
+son2[10]=x[10];
+
+for (int w=0; w<9; w++){
+		cout << son2[w]<<", ";
+	}
+
+break;
+
+case 3:
+son2[1]=x[1];
+son2[2]=x[2];
+son2[3]=y[3];
+son2[4]=y[4];
+son2[5]=y[5];
+son2[6]=y[6];
+son2[7]=x[7];
+son2[8]=x[8];
+son2[9]=x[9];
+son2[10]=y[10];
 
 for (int w=0; w<9; w++){
 		cout << son2[w]<<", ";
@@ -97,10 +115,6 @@ for (int w=0; w<9; w++){
 
 break;
 /*
-case 3:
-
-break;
-
 case 4:
 
 
