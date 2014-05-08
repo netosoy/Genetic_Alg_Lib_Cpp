@@ -3,39 +3,138 @@
 #include <iostream>
 #include <time.h>
 #include <math.h>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
+using std::string;
 
-int indiv1 []= {0,1,2,3,4}
-int indiv2 []= {5,6,7,8,9}
+#define RANDOM_NUM ((float)rand()/(RAND_MAX+1))
 
-double uniformRate = 0.5;
- 
-    // Crossover individualsr
-    private static Individual_crossover (Individual indiv1, Individual indiv2) {
-        Individual newSol = new Individual();
-        // Loop through genes
-        for (int i = 0; i < indiv1.size(); i++) {
-            // Crossover
-            if (Math.random() <= uniformRate) {
-                newSol.setGene(i, indiv1.getGene(i));
-            } else {
-                newSol.setGene(i, indiv2.getGene(i));
-            }
-        }
-        return newSol;
-    }
-    
-    
-     private static Individual tournamentSelection(Population pop) {
-        // Create a tournament population
-        Population tournament = new Population(tournamentSize, false);
-        // For each place in the tournament get a random individual
-        for (int i = 0; i < tournamentSize; i++) {
-            int randomId = (int) (Math.random() * pop.size());
-            tournament.saveIndividual(i, pop.getIndividual(randomId));
-        }
-        // Get the fittest
-        Individual fittest = tournament.getFittest();
-        return fittest;
-    }
+/////////////////////////////////prototypes/////////////////////////////////////////////////////
+
+vector<int> indiv1 (10);
+vector<int> indiv2 (10);
+vector<int> son;
+vector<int> son2 (10);
+
+
+
+int main()
+{ 
+    for (vector<int>::size_type i = 0; i < 9; i++)
+    {
+        cout << "Enter values for the 5 sized vector indiv1 on position: " << i+1 << ": "<< flush;
+        cin >> indiv1[i];
+	}
+		cout << "\n\n\n\n"; 
+	for (vector<int>::size_type n = 0; n < 9; n++)
+    {
+        cout << "Enter values for the 5 sized vector indiv2 on position: " << n+1 << ": "<< flush;
+        cin >> indiv2[n];
+	}
+	
+		son.reserve(indiv1.size() + indiv2.size() ); // preallocate memory
+		son.insert( son.end(), indiv1.begin(), indiv1.end() );
+		son.insert( son.end(), indiv2.begin(), indiv2.end() );
+		cout << "\n\n" << "The Multivalue Crossover algorithm is gonna give the following sequence";
+
+		for (int w=0; w<19; w++){
+		cout<< son[w]<<", ";
+	}
+		CROSSOVER(indiv1, indiv2);
+	return 0;
+}
+
+
+//---------------------------------- Crossover ---------------------------------------
+void CROSSOVER(int x[], int y[]){
+	int CROSSPOINT;
+  /* initialize random seed: */
+	srand (time(NULL));
+
+  /* generate secret number between 1 and 10: */
+	CROSSPOINT = rand() % 9 + 1;	
+  //cout << CROSSPOINT;
+
+switch(CROSSPOINT){
+	
+case 1:
+son2[1]=x[1];
+son2[2]=y[1];
+son2[3]=y[2];
+son2[4]=y[3];
+son2[5]=y[4];
+son2[6]=y[5];
+son2[7]=y[6];
+son2[8]=y[7];
+son2[9]=y[8];
+son2[10]=y[9];
+
+for (int w=0; w<9; w++){
+		cout << son2[w]<<", ";
+	}
+
+break;
+
+
+case 2:
+
+son2[1]=x[1];
+son2[2]=x[2];
+son2[3]=y[1];
+son2[4]=y[2];
+son2[5]=y[3];
+son2[6]=y[4];
+son2[7]=y[5];
+son2[8]=y[6];
+son2[9]=y[7];
+son2[10]=y[8];
+
+for (int w=0; w<9; w++){
+		cout << son2[w]<<", ";
+	}
+
+break;
+/*
+case 3:
+
+break;
+
+case 4:
+
+
+break;
+
+case 5:
+
+
+
+break;
+
+case 6:
+
+break;
+
+case 7:
+
+break;
+
+case 8:
+
+break;
+
+case 9:
+
+break;
+
+case 10:
+
+break;
+*/
+
+default:
+cout << "you should check what you entered";
+break; 
+}
+}

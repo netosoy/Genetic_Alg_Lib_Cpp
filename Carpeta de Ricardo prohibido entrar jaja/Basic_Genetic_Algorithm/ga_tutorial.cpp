@@ -75,7 +75,7 @@ int main()
 	  float Target;
 	  cout << "\nInput a target number: ";
 	  cin >> Target;
-    cout << endl << endl;
+      cout << endl << endl;
 	  
 	  //first create a random population, all with zero fitness.
 	  for (int i=0; i<POP_SIZE; i++)
@@ -105,7 +105,7 @@ int main()
 		  }
 
 		  // check to see if we have found any solutions (fitness will be 999)
-		  for (i=0; i<POP_SIZE; i++)
+		  for (int i=0; i<POP_SIZE; i++)
 		  {
 			  if (Population[i].fitness == 999.0f)
 			  {
@@ -151,7 +151,7 @@ int main()
 		  }//end loop
 
 		  //copy temp population into main population array
-		  for (i=0; i<POP_SIZE; i++)
+		  for (int i=0; i<POP_SIZE; i++)
       {
 			  Population[i] = temp[i];
       }
@@ -292,7 +292,7 @@ int ParseBits(string bits, int* buffer)
 	//	is included and delete it. (ie a '/' followed by a '0'). We take an easy
 	//	way out here and just change the '/' to a '+'. This will not effect the 
 	//	evolution of the solution
-	for (i=0; i<cBuff; i++)
+	for (int i=0; i<cBuff; i++)
 	{
 		if ( (buffer[i] == 13) && (buffer[i+1] == 0) )
 		
