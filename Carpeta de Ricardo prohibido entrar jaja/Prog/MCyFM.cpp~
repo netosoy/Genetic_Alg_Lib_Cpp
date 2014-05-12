@@ -14,22 +14,23 @@ using std::string;
 
 
 vector<int> indiv1 ;
-int sizeindivs;
+int sizeindiv1;
 vector<int> indiv2 ;
+int sizeindiv2;
 vector<int> son;
 vector<int> son2 ;
 //vector<int>::iterator it;
 
 
 //---------------------------------- Crossover ---------------------------------------
-vector<int> CROSSOVER(vector<int>x, vector<int>y, int size){
+void CROSSOVER(vector<int>x, vector<int>y, int size){
 	int CROSSPOINT;
 	double vectorDivisor;
   /* initialize random seed: */
 	srand (time(NULL));
 
   /* generate secret number between 1 and 4: */
-	CROSSPOINT = rand() % x.size();	
+	CROSSPOINT = rand() % 4 + 1;	
     cout << "The number of croospoints is: " << CROSSPOINT<<endl;
 
 switch(CROSSPOINT){
@@ -65,7 +66,6 @@ default:
 cout << "you should check what you entered";
 break; 
 }
-return *
 }
 
 //------------------------------------------Flip Mutation---------------------------------------------
@@ -91,20 +91,22 @@ int FMUT(int a) {
 
 int main()
 {
-	cout<< "Enter the number of genes for individual's 1 and individual's 2 chromosome" << endl;
-	cin >> sizeindivs;
-
+	cout<< "Enter the number of genes for individual's 1 chromosome" << endl;
+	cin >> sizeindiv1;
 	
-	indiv1.resize (sizeindivs);
-	indiv2.resize (sizeindivs);
+	cout<< "Enter the number of genes for individual's 2 chromosome (same as individual 1 please)" << endl;
+	cin >> sizeindiv2;
 	
-    for (vector<int>::size_type i = 0; i < sizeindivs; i++)
+	indiv1.resize (sizeindiv1);
+	indiv2.resize (sizeindiv2);
+	
+    for (vector<int>::size_type i = 0; i < sizeindiv1; i++)
     {
         cout << "Enter values for the vector indiv1 on position: " << i+1 << ": "<< flush;
         cin >> indiv1[i];
 	}
 		cout << "\n\n\n\n"; 
-	for (vector<int>::size_type n = 0; n < sizeindivs; n++)
+	for (vector<int>::size_type n = 0; n < sizeindiv2; n++)
     {
         cout << "Enter values for the vector indiv2 on position: " << n+1 << ": "<< flush;
         cin >> indiv2[n];
@@ -119,8 +121,8 @@ int main()
 		cout<< son[w]<<", ";
 	}
 	
-		CROSSOVER(indiv1, indiv2, sizeindivs);
-		FMUT(CROSSPOINT);
+		//CROSSOVER(indiv1, indiv2, sizeindiv1);
+		//FMUT(CROSSPOINT);
 	
 	return 0;
 }
