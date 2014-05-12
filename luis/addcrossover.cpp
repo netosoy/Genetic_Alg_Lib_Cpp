@@ -14,9 +14,6 @@ int parent2 [10];
 int son [10];
 
 
-
-
-
 int main(void){
 
 
@@ -49,9 +46,20 @@ cout << "]" << "\n\n" << endl;
 
 //-------------------------sum method------------------------------------------------
 
-int parent1*, parent2*, son*;
+
+int *ptr1;
+ptr1 = parent1;
+int *ptr2;
+ptr2 = parent2;
+int num
+
+for (int i =0; i<9; i++){
+	num = &ptr1[i] + &ptr2[i];
+}
+
 for(int i = 0; i < 9; i++){   
-     
+	
+	son[i]=
 	}
 
 
