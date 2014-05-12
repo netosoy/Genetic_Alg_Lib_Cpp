@@ -16,6 +16,7 @@ void print_vector(vector<int> &);
 void fill_vector(vector<int> &);
 void swapPos(int, int,vector<int> &);
 void GaInvertMutation(vector<int> &, int);
+void GaSwapMutation(vector<int> &, int);
 
 //vector<int> A(7);
 vector<int> B(7);
@@ -25,10 +26,10 @@ int main(void){
 	print_vector(A);
 	fill_vector(A);
 	GaInvertMutation(A,3);
-	cout<<"the muted vector A"<<endl;
+	cout<<"inverse muted vector A"<<endl;
 	print_vector(A);
-	swapPos(1,6,A);
-	cout<<"the swaped vector A"<<endl;
+	cout<<"swap muted vector A"<<endl;	
+	GaSwapMutation(A,2);
 	print_vector(A);
 	}
 	
@@ -38,7 +39,8 @@ int randomInt(int min, int max){
 	}	
 
 void print_vector(vector<int> &V){
-	cout<<"The vector "<<VNAME(V)<<":"<<endl<<"[";
+	//cout<<"The vector "<<VNAME(V)<<":"<<endl<<"[";
+	cout<<"[ ";
 	for(int i=0;i<V.size();i++){
 		cout<<V[i]<<" ";
 		}
@@ -61,5 +63,10 @@ void swapPos(int i, int j, vector<int> &V){
 	int aux = V[i];
 	V[i]=V[j];
 	V[j]=aux;
+	}
+void GaSwapMutation(vector<int> &V, int n){
+	for(int i=0;i<n;i++){
+		swapPos(randomInt(0,V.size()),randomInt(0,V.size()),V);
+		}
 	}
 
