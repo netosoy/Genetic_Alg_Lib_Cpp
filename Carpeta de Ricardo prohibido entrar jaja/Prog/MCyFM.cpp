@@ -10,120 +10,84 @@
 using namespace std;
 using std::string;
 
-/////////////////////////////////////////////prototypes/////////////////////////////////////////////////////
-
-
-vector<int> indiv1 ;
-int sizeindivs;
-vector<int> indiv2 ;
-vector<int> son;
-vector<int> son2 ;
-//vector<int>::iterator it;
-
-
 //---------------------------------- Crossover ---------------------------------------
-vector<int> CROSSOVER(vector<int>x, vector<int>y, int size){
-	int CROSSPOINT;
-	double vectorDivisor;
-  /* initialize random seed: */
+
+
+void print_vector(vector<int> &);
+
+void fill_vector(vector<int> &);
+
+vector<int> MultiValCross(vector<int> &, vector<int> &);
+
+
+//-----------------------------------Flip Mutation-------------------------------------
+
+
+vector<int> FMUT(vector<int> &);
+
+
+
+//--------------------------------------Main-------------------------------------------
+
+int main(){
+	vector<int> indiv1(8);
+	vector<int> indiv2(8);
+	vector<int> son(8);
+	cout<<"For the individual 1 -->"<<endl;
+	fill_vector(indiv1);
+	print_vector(indiv1);
+	cout<<"\n\n";
+	cout<<"For the individual 2 -->"<<endl;
+	fill_vector(indiv2);
+	//print_vector(indiv1);
+	print_vector(indiv2);
+	cout<<"\n\n";
+	son = MultiValCross(indiv1, indiv2);
+	cout<<"The Multivalue Crossover is gonna give the following sequence -->"<<endl;
+	print_vector(son);
+	cout<<"\n\n";
+	cout<<"The Flip Mutation applied on the individuals offspring is gonna give the following mutated sequence-->"<<endl;
+	son=FMUT(son);
+	print_vector(son);
+	return 0;
+	}
+
+void print_vector(vector<int> &V){
+	cout<<"[ ";
+	for(int i=0;i<V.size();i++){
+		cout<<V[i]<<" ";
+		}
+	cout<<"]"<<endl;
+	}
+
+void fill_vector(vector<int> &V){
+	
+	for(int i=0;i<V.size();i++){
+		cout<<"Enter the values for the vector on position #" << i+1 << ": "<<endl;
+		cin>>V[i];
+		}
+	}
+	
+vector<int> MultiValCross(vector<int> &X, vector<int> &Y){
+	vector<int> aux(X.size());
 	srand (time(NULL));
-
-  /* generate secret number between 1 and 4: */
-	CROSSPOINT = rand() % x.size();	
-    cout << "The number of croospoints is: " << CROSSPOINT<<endl;
-
-switch(CROSSPOINT){
+	int crosspoint =rand() % X.size();
+	for(int i=0; i<crosspoint; i++){
+		aux[i]=X[i];
+		}
+	for(int i=crosspoint; i<X.size(); i++){
+		aux[i]=Y[i];
+		}
+	return aux;
+	}
 	
-case 1:
-
-son2.resize(size);
-vectorDivisor = floor((son2.size())/2 + 0.5);
-son2.insert(son2.begin(), x.begin(), x.end());
-son2.insert(son2.begin()+vectorDivisor, y.begin(),y.end());
-//Mando 9999999999999999999999999999999999999999999999999999999999999
-//Se divide vector a la mitad y si es necesario se redondea y se rellena con vector1 y vector2 por partes iguales
-
-break;
-
-case 2:
-
-//Se divide vector entre tres, se redondea y se rellena con v1, v2, v1
-
-break;
-
-case 3:
-
-//Se divide vector entre 4
-
-break;
-
-case 4:
-//Se divide en 5 (habria que pedir que el numero de genes "sizeindiv1" y "sizeindiv2" no sea menor a 10)
-break;
-
-default:
-cout << "you should check what you entered";
-break; 
-}
-return *
-}
-
-//------------------------------------------Flip Mutation---------------------------------------------
-int FMUT(int a) {
+vector<int> FMUT(vector<int>&V) {
 	
-	int MutVar = rand() % 4 + 1;
-	if (MutVar<son2.size() && a<son2.size()){
+	srand (time(NULL));
+	int MutVar = rand() % V.size();
+	vector<int> aux2(V.size());
+	
+		aux2[MutVar+1]=MutVar*8;
 		
-		for (int i=0; i<=MutVar; i++){
-		son2[(2*i)]=MutVar + a;
-		
-		son2[(2*i)+1]=a-MutVar+3;
+		return aux2;
 	}
-	}
-	else {
-		return 0;
-	}
-	
-	return 0;
-	
-}
-
-
-int main()
-{
-	cout<< "Enter the number of genes for individual's 1 and individual's 2 chromosome" << endl;
-	cin >> sizeindivs;
-
-	
-	indiv1.resize (sizeindivs);
-	indiv2.resize (sizeindivs);
-	
-    for (vector<int>::size_type i = 0; i < sizeindivs; i++)
-    {
-        cout << "Enter values for the vector indiv1 on position: " << i+1 << ": "<< flush;
-        cin >> indiv1[i];
-	}
-		cout << "\n\n\n\n"; 
-	for (vector<int>::size_type n = 0; n < sizeindivs; n++)
-    {
-        cout << "Enter values for the vector indiv2 on position: " << n+1 << ": "<< flush;
-        cin >> indiv2[n];
-	}
-	
-		son.reserve(indiv1.size() + indiv2.size() ); // preallocate memory
-		son.insert( son.begin(), indiv1.begin(), indiv1.end() );
-		son.insert( son.end(), indiv2.begin(), indiv2.end() );
-		cout << "\n\n" << "The Multivalue Crossover algorithm is gonna give the following sequence for son\n\n";
-
-		for (int w=0; w<19; w++){
-		cout<< son[w]<<", ";
-	}
-	
-		CROSSOVER(indiv1, indiv2, sizeindivs);
-		FMUT(CROSSPOINT);
-	
-	return 0;
-}
-
-
-
