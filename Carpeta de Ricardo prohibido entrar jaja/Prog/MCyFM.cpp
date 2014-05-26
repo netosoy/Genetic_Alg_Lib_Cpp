@@ -30,9 +30,9 @@ vector<int> FMUT(vector<int> &);
 //--------------------------------------Main-------------------------------------------
 
 int main(){
-	vector<int> indiv1(8);
-	vector<int> indiv2(8);
-	vector<int> son(8);
+	vector<int> indiv1(5);
+	vector<int> indiv2(5);
+	vector<int> son(5);
 	cout<<"For the individual 1 -->"<<endl;
 	fill_vector(indiv1);
 	print_vector(indiv1);
@@ -72,6 +72,7 @@ vector<int> MultiValCross(vector<int> &X, vector<int> &Y){
 	vector<int> aux(X.size());
 	srand (time(NULL));
 	int crosspoint =rand() % X.size();
+	cout<< "El valor de la variable para la posicion de cruce es:"<<crosspoint<<endl;
 	for(int i=0; i<crosspoint; i++){
 		aux[i]=X[i];
 		}
@@ -84,10 +85,14 @@ vector<int> MultiValCross(vector<int> &X, vector<int> &Y){
 vector<int> FMUT(vector<int>&V) {
 	
 	srand (time(NULL));
-	int MutVar = rand() % V.size();
+	int MutVar = rand() % V.size()-4 + (V.size()+2);
+    cout<< "El valor de la variable para la posicion de mutacion es:"<<MutVar<<endl;
 	vector<int> aux2(V.size());
+	aux2 = V;
 	
 		aux2[MutVar+1]=MutVar*8;
+		
+        aux2[MutVar-1]=MutVar-33;
 		
 		return aux2;
 	}
