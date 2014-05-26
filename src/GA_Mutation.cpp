@@ -9,6 +9,7 @@
 //#include "Random.hh"
 
 #define VNAME(x)  #x 
+#define VSIZE 10
 
 using namespace std;
 int randomInt(int, int);
@@ -19,17 +20,18 @@ void GaInvertMutation(vector<int> &, int);
 void GaSwapMutation(vector<int> &, int);
 
 //vector<int> A(7);
-vector<int> B(7);
+vector<int> B(VSIZE);
 
 int main(void){
-	vector<int> A(7);
-	print_vector(A);
+	srand (time(NULL));
+	vector<int> A(VSIZE);
+	//print_vector(A);
 	fill_vector(A);
-	GaInvertMutation(A,3);
+	GaInvertMutation(A,VSIZE);
 	cout<<"inverse muted vector A"<<endl;
 	print_vector(A);
 	cout<<"swap muted vector A"<<endl;	
-	GaSwapMutation(A,2);
+	GaSwapMutation(A,VSIZE);
 	print_vector(A);
 	}
 	
