@@ -19,7 +19,7 @@ void swapPos(int, int,vector<int> &);
 void GaInvertMutation(vector<int> &, int);
 void GaSwapMutation(vector<int> &, int);
 
-//vector<int> A(7);
+//vector<int> A(10);
 vector<int> B(VSIZE);
 
 int main(void){
