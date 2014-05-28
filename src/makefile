@@ -1,14 +1,12 @@
-OBJS = GA_Mutation.cpp Random.o Threading.o
+OBJS = test.cpp GA_Mutation.o 
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG) -pedantic
-LFLAGS = -Wall $(DEBIG) -pedantic
-TARGET = main
+LFLAGS = -Wall $(DEBUG) -pedantic
+TARGET = test
 $(TARGET) : $(OBJS)
-	$(CC) $(LFLAGS) $(OBJS) -lpthread -o $(TARGET)
-Threading.o : Threading.hh Threading.cpp
-	$(CC) $(CFLAGS) Threading.cpp -lpthread
-Random.o : Random.hh Random.cpp Threading.o
-	$(CC) $(CFLAGS) Random.cpp
-clean:
-	rm -f *.o $(TARGET) *~
+	$(CC) $(LFLAGS) $(OBJS) -o $(TARGET)
+GA_Mutation.o : GA_Mutation.hh GA_Mutation.cpp
+	$(CC) $(CFLAGS) GA_Mutation.cpp
+clean : 
+	rm -f *.o *~ $(TARGET)

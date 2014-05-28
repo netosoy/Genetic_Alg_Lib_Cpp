@@ -1,41 +1,7 @@
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <math.h>
-#include <vector>
-#include <algorithm>
-//#include "Platform.hh"
-//#include "Threading.hh"
-//#include "Random.hh"
+#include "GA_Mutation.hh"
 
-#define VNAME(x)  #x 
-#define VSIZE 10
-
-using namespace std;
-int randomInt(int, int);
-void print_vector(vector<int> &);
-void fill_vector(vector<int> &);
-void swapPos(int, int,vector<int> &);
-void GaInvertMutation(vector<int> &, int);
-void GaSwapMutation(vector<int> &, int);
-
-//vector<int> A(10);
-vector<int> B(VSIZE);
-
-int main(void){
-	srand (time(NULL));
-	vector<int> A(VSIZE);
-	//print_vector(A);
-	fill_vector(A);
-	GaInvertMutation(A,VSIZE);
-	cout<<"inverse muted vector A"<<endl;
-	print_vector(A);
-	cout<<"swap muted vector A"<<endl;	
-	GaSwapMutation(A,VSIZE);
-	print_vector(A);
-	}
-	
 int randomInt(int min, int max){
+	srand(time(NULL));
 	int output = min + (rand() % (int)(max - min));
 	return output;
 	}	
