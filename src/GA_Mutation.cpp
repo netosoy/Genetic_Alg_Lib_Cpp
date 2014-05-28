@@ -1,36 +1,7 @@
 #include "GA_Mutation.hh"
 
-<<<<<<< HEAD
-=======
-#define VNAME(x)  #x 
-#define VSIZE 10
-
-using namespace std;
-int randomInt(int, int);
-void print_vector(vector<int> &);
-void fill_vector(vector<int> &);
-void swapPos(int, int,vector<int> &);
-void GaInvertMutation(vector<int> &, int);
-void GaSwapMutation(vector<int> &, int);
-
-//vector<int> A(10);
-vector<int> B(VSIZE);
-
-int main(void){
-	srand (time(NULL));
-	vector<int> A(VSIZE);
-	//print_vector(A);
-	fill_vector(A);
-	GaInvertMutation(A,VSIZE);
-	cout<<"inverse muted vector A"<<endl;
-	print_vector(A);
-	cout<<"swap muted vector A"<<endl;	
-	GaSwapMutation(A,VSIZE);
-	print_vector(A);
-	}
-	
->>>>>>> c4529dafc6db5df2ff16098e987079009e5545c4
 int randomInt(int min, int max){
+	srand (time(NULL));
 	int output = min + (rand() % (int)(max - min));
 	return output;
 	}	

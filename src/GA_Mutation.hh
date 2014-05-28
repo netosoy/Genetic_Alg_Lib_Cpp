@@ -4,13 +4,9 @@
 #include <math.h>
 #include <vector>
 #include <algorithm>
-//#include "Platform.hh"
-//#include "Threading.hh"
-//#include "Random.hh"
 
 using namespace std;
 
-#define VNAME(x)  #x 
 #define VSIZE 10
 
 //declaración de métodos

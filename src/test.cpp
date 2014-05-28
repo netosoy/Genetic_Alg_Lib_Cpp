@@ -1,4 +1,4 @@
-#include"GA_Mutation.hh"
+#include "GA_Mutation.hh"
 
 int main(void){
 	vector<int> genoma(VSIZE);
@@ -7,7 +7,7 @@ int main(void){
 	cout<<"GENOMA"<<endl;
 	print_vector(genoma);
 	cout<<"Modificando el genoma"<<endl;
-	GaSwapMutation(genoma,3);
+	GaSwapMutation(genoma,6);
 	GaInvertMutation(genoma,5);
 	print_vector(genoma);
 	}
