@@ -1,7 +1,7 @@
 #include "GA_Mutation.hh"
 
 int randomInt(int min, int max){
-	srand (time(NULL));
+	srand(time(NULL));
 	int output = min + (rand() % (int)(max - min));
 	return output;
 	}	
