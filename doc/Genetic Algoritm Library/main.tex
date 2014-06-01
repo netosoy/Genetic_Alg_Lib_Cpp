@@ -1,0 +1,417 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[activeacute,english]{babel}
+\usepackage[vmargin=4cm,tmargin=3cm,hmargin=2cm,letterpaper]{geometry}%
+\usepackage{helvet}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{tabls}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{listings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{plot}
+\usepackage{wrapfig}
+\usetikzlibrary{arrows,decorations,snakes,backgrounds,fit,calc,through,scopes,positioning,automata,chains,er,fadings,calendar,matrix,mindmap,folding,patterns,petri,plothandlers,plotmarks,shadows,shapes,shapes.arrows,topaths,trees}
+
+\lstset{% general command to set parameter(s)
+%   basicstyle=\small,
+  % print whole listing small
+%   keywordstyle=\color{black}\bfseries\underbar,
+  % underlined bold black keywords
+%   identifierstyle=,
+  % nothing happens
+%   commentstyle=\color{white}, % white comments
+%   stringstyle=\ttfamily,
+  % typewriter type for strings
+  showstringspaces=false}
+  % no special string spaces
+%\DeclareGraphicsExtensions{.bmp,.png,.pdf,.jpg,.eps}
+\pagestyle{fancy}
+\color{black}
+\fancyhead{}
+\renewcommand{\headrule}{\hrule\vspace*{0.5mm}\rule{\linewidth}{0.8mm}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{/home/luis/Documents/estructuras}}
+\lhead{\includegraphics[width=2cm]{images/logoucr.eps}}
+\rhead{\includegraphics[width=3cm]{images/eie-text-gray-6x3cm.eps}}
+\chead{UNIVERSITY OF COSTA RICA\\ENGINEERING FACULTY\\ELECTRICAL ENGINENEERING SCHOOL\\\textbf{ABSTRACT DATA STRUCTURES AND ALGORITHMS \\ FOR ENGINEERING}\\IE-0217\\CYCLE I ,2014\\C++ PROJECT}
+
+\lfoot{}%
+\cfoot{}%
+%\cfoot{\thepage\ de \pageref{LastPage}}%
+\rfoot{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uic}{black} %user-input color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uim}{\\} %user-input marker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\userinput}[1]{\textcolor{\uic}{\uim#1\uim}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}\vspace*{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\Huge
+\userinput{Genetic Algorithms Library}
+\vspace*{1cm}
+\end{center}
+
+\noindent
+\small\baselineskip=14pt
+\textbf{Student:} \userinput{Luis Sergio Yannicelli Vargas\\Ricardo Chacón Carvajal\\Ernesto Cespedez}\\
+\textbf{License:} \userinput{A87086\\B11748\\A31355}\\
+\textbf{Email:} \textit{lsyannnicelli@gmail.com, vrlrdo@gmail.com, netosoy}\\
+
+\section{Introduction}
+
+In the present days, technologic growth specially in the programming field, represents and important issue, taking big part on solving a variety of topics, implementing algorithms as a tool. * Genetic algorithms are evolutionary algorithms, more broadly belonging to the Biologically Inspired Computation, useful for optimization problems. Its structure is inspired firmly on the field of genetics and Mendelian biology, specifically populations, gene frequency, chromosomes, genes, alleles, and so on in terms related to genetics; on the other hand it applies genetic processes such as evolution, recombination, mutation, heredity and others to improve the algorithm's efficiency for its goal which is combinatorial optimization.
+\section{Objectives}
+
+\subsection{General Objective}
+
+To implement a C++ library of genetic algorithms.
+
+\subsection{Specific Objectives}
+
+Specific Objectives are:\\
+
+\begin{enumerate}
+\item To understand genetics algorithms method as evolutive algorithm.
+\item To describe genetic algorithms method and some aplications in which this algorithm could be efficient.
+\item To implement an C++ library of genetic algorithms.
+\end{enumerate}
+
+\section{Methodology}
+
+The goal of the investigation would be to create a free genetic algorithm library written using C++, in other words, we pretend to create a headers (.h) directory which will contain all the function statements of the library and another directory of source files (.cpp) which is gonna contain the function implementations. The objective is to create a dinamic library, for so we pretend to create and .so final archive, that will be compiled through cmake.
+\\
+The function implementations will be based on bibliographic studies featuring the general theory of genetic algorithms to understand the data structure to exert in the function load up, evaluation, selection, crossing, mutation, and recombination. Besides we pretend to search pseudocodes or implementations in other languages, of the mentioned functions, so by the side with the bibliographic study, we can understand the structures of those and be in capacity of replicate and execute in a proper way the genetic algorithms.
+\\
+
+
+\section{Genetic Algorithms}
+
+\subsection{Genetic Alogorithms Introduction}
+
+Based on the process of evolution by natural selection, this type of algorithm is used to solve combinatorial optimization problems which ends up showing a fitness value, to different solutions proposed by the algorithm.\\
+
+Genetic algorithms operate on a set of possible solutions \cite{code}. It has a random nature, because of that, we can obtain several solutions, some can be optimal, good or poor solutions. Because of that, we can solve this problem using fitness comparators.\\
+
+Chromosomes represents solutions of the genetic algorithms, they are grouped in populations, in each generation, algorithm takes samples from population based on the fitness value, then makes a crossover in order to get new chromosomes. Main goal is to obtain a better population, better than previous one.\\
+
+Statistical information is gathered, from here, we can obtain an stop criteria. Each chromosome represents a solution, one better than another chromosome according to fitness comparator. 
+
+
+\subsection{Definitions}
+
+Is important to get some definitions, because this vocabulary is often used in this document, and our criteria is based in this ideas, from here, we can build the algorithm. Definitions are based in this document \cite{code}.
+
+\begin{itemize}
+\item \textbf{Crossover}: Biological process featuring the combination of genes between parents. Is the way to obtain new chromosomes  by combining existing chromosomes. It takes two parents chromosomes and combine them, obtaining a new one, son chromosome. Also, is posible to copy parents, if crossover is not made. Probability of crossover method is up to $80\%$.
+
+\item \textbf{Mutation}: Condition in which a gene presents a variant form in its structure due to DNA base unit alterations. It consist to take a parent chromosome and change one or more inputs ramdomly with a pretty low probability, less than a $3\%$.
+
+\item \textbf{Fitness Comparator}: This comparator measures quality of son chromosomes. But, this solution is specific to each problem \cite{code}. It tells to the algorithm what to optimize. 
+
+\item \textbf{Selection}: Is the way to choose parents from existing chromosomes. We are able to select several criteria, but is often used fitness value. But, it is dangerous only to take best chromosomes, because, all sons will want to be the same very quickly. In order to preserve diversity on the population, selection methods are random. By this way we can obtain better solutions. 
+
+\end{itemize}
+
+In figure \ref{F:bloques} we have a block diagram. By this way, is easy to understand steps of the algorithm. It begins in Selected Chromosomes block. It selects parents, then store them. Later, makes crossover and occasionaly mutation, and stores the sons. Finally, it verifies stop criteria, then, it decides to stop or to repeat cycle. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{images/diagramabloques.pdf}
+\caption{Block Diagram}
+\label{F:bloques}
+\end{figure}
+
+
+\section{Genetic Algorithm Library}
+
+Is important to get an structure for the library. In figure \ref{F:estructura} is shown each part of the project. This items represents what is necessary to implement to get a genetic algorithm library.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{images/estructura.png}
+\caption{Library Structure}
+\label{F:estructura}
+\end{figure}
+
+In this part of the project, we are focused in programming chromosome, specially in mutation and crossover, because this is a pretty important part of the algorithm, because this guarantee quality of the output, because of the randomness implementation. We ensure to get random results as possible.\\
+
+Represented by the many solutions displayed by the genetic algorithm which are labeled by fitness values. Through each generation the algorithm selects the best chromosomes and combines them into offsprings forming new populations until the best one is created and the algorithm stops.
+
+\subsection{Crossover Methods}
+
+We have implemented three crossover methods based on this work \cite{code}:\\
+
+\begin{itemize}
+\item Add Crossover
+\item Midpoint Crossover
+\item Multivalue Crossover
+\end{itemize}
+
+In order to select a crossover method, first, a random selection is made, then crossover starts. Is important that parents vectors and son vector must have same lenght.\\
+
+\subsubsection{Add Crossover}
+
+This method randomly choose to add or to substract, then it takes first input of parent1 and parent2 and it add or substract them, and repeat this process until do the same with each input. Son vector is the solution. In figures \ref{add} and \ref{substract} we can see examples about 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/add.png}
+\caption{Add example}
+\label{F:add}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/substract.png}
+\caption{Substract example}
+\label{F:substract}
+\end{figure}
+
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+
+
+
+\lstset{language=C++}
+\begin{lstlisting}
+vector<int> addCrossover(vector<int> &ptr1,vector<int> &ptr2){
+	
+	srand (time(NULL));
+	int r = rand() %2;
+	vector<int> son(ptr1.size());
+	
+	if(r==0){
+/** @brief Add method.
+ * */		
+		for(vector<int>::size_type i=0;i<ptr1.size();i++){
+			son[i]=ptr1[i]+ptr2[i];
+			}
+		}
+else{
+/** @brief Subtraction method.
+ * */	
+	for(vector<int>::size_type i=0;i<ptr1.size();i++){
+		son[i]=ptr1[i]-ptr2[i];
+		}
+	}
+	return son;
+\end{lstlisting}
+
+\subsubsection{Midpoint Crossover}
+
+This method calculate midpoint with equation \ref{E:midpoint}:\\
+
+\begin{equation}
+son[i]=\frac{parent1[i]+parent2[i]}{2}
+\label{E:midpoint}
+\end{equation}
+
+There is an example of this result in figure \ref{F:midpoint} :
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/midpoint.png}
+\caption{Midpoint Example}
+\label{F:midpoint}
+\end{figure}
+
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+
+
+\lstset{language=C++}
+\begin{lstlisting}
+vector<int> midpointCrossover(vector<int> &parent1,vector<int> &parent2){
+	vector<int> son(parent1.size());
+
+for(vector<int>::size_type i=0;i<parent1.size();i++){
+	son[i]=(parent1[i]+parent2[i])/2;
+	}
+	return son;
+\end{lstlisting}
+
+
+\subsubsection{Multivalue Crossover}
+
+This method copy some inputs of the parent1 and replace in parent2 in a random input of the vector and this operation can be possible several times randomly, there is an example in figure \ref{F:multivalue}:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/multivalue.png}
+\caption{Multivalue Crossover Example}
+\label{F:multivalue}
+\end{figure}
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+
+
+\lstset{language=C++}
+\begin{lstlisting}
+vector<int> MultiValCross(vector<int> &parent1, vector<int> &parent2){
+	vector<int> son(parent1.size());
+	srand (time(NULL));
+	int crosspoint =rand()%((unsigned int)parent1.size());
+	cout<< "El valor de la variable para la posicion de cruce es:"<<crosspoint<<endl;
+	for(int i=0; i<crosspoint; i++){
+		son[i]=parent1[i];
+		}
+	for(int i=crosspoint; i<parent1.size(); i++){
+		son[i]=parent2[i];
+		}
+	return son;
+	}
+\end{lstlisting}
+
+
+\subsection{Mutation Methods}
+
+A mutation method takes a chromosome and changes some of its characteristics. Analog case of crossover, a random selection method is used to choose one of them. We have implemented three mutation methods as it follows:
+
+\subsubsection{Flip Mutation}
+
+This method takes a random input of one parent and changes this input with another random number. In figure \ref{F:flip} we have an example:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/flipmutation.png}
+\caption{Flip Mutation Example}
+\label{F:flip}
+\end{figure}
+
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+
+
+\lstset{language=C++}
+\begin{lstlisting}
+void FlipMutation(vector<int> &V, int n) {
+	
+	int nVal=randomInt(0,n);
+	for(int i=0;i<nVal;i++){
+		srand(time(NULL));
+		V[randomInt(0,(int) V.size())]=randomInt(0,20);
+		}
+	//vector<int> aux2((int) V.size());
+	//aux2 = V;
+	
+	//	aux2[MutVar+1]=MutVar*8;
+		
+    //    aux2[MutVar-1]=MutVar-33;
+		
+	//	return aux2;
+	}
+
+\end{lstlisting}
+
+
+\subsubsection{Swap Mutation}
+
+This method makes an operation which chooses two blocks of values in a chromosome's code and swaps their positions in the code. In figure \ref{F:swap} there is an example of the result son:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/swap.png}
+\caption{Swap Mutation Example}
+\label{F:swap}
+\end{figure}
+
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+\lstset{language=C++}
+\begin{lstlisting}
+void swapPos(int i, int j, vector<int> &V){
+	int aux = V[i];
+	V[i]=V[j];
+	V[j]=aux;
+	}
+void GaSwapMutation(vector<int> &V, int n){
+	for(int i=0;i<n;i++){
+		srand(time(NULL));
+		swapPos(randomInt(0,(int) V.size()),randomInt(0,(int) V.size()),V);
+		}
+	}
+\end{lstlisting}
+
+
+\subsubsection{Invert Mutation}
+
+This method takes a parent vector, and randomly choose some inputs and inverts signe. There is an example in figure \ref{F:invert}:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{images/invert.png}
+\caption{Invert Mutation Example}
+\label{F:invert}
+\end{figure}
+
+\bigskip
+\bigskip
+C++ Implementation-->
+\bigskip
+\bigskip
+
+
+\lstset{language=C++}
+\begin{lstlisting}
+void GaInvertMutation(vector<int> &V, int n){
+	for(int i=0;i<n;i++){
+		srand(time(NULL));
+		//cout<<"generando numero aleatorio: "<<randomInt(0,(int) V.size())<<endl;
+		V[randomInt(0,(int) V.size())]*=-1;
+		}
+	}
+\end{lstlisting}
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{code}
+Consultado el 29 de marzo de 2014, en: http://www.codeproject.com/Articles/26203/Genetic-Algorithm-Library
+
+\end{thebibliography}
+
+\end{document}
