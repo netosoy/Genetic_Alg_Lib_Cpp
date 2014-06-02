@@ -1,26 +1,6 @@
+#include "GenomaProc.hh"
 #include "GA_Mutation.hh"
 
-int randomInt(int min, int max){		//random number from min to max-1, not include max
-	srand(time(NULL));
-	int output = min + (rand() % (int)(max - min));
-	return output;
-	}	
-
-void print_vector(vector<int> &V){
-	//cout<<"The vector "<<VNAME(V)<<":"<<endl<<"[";
-	cout<<"[ ";
-	for(int i=0;i<(int) V.size();i++){
-		cout<<V[i]<<" ";
-		}
-	cout<<"]"<<endl;
-	}
-
-void fill_vector(vector<int> &V){
-	cout<<"enter the values of the vector"<<endl;
-	for(int i=0;i<(int) V.size();i++){
-		cin>>V[i];
-		}
-	}
 void GaInvertMutation(vector<int> &V, int n){
 	for(int i=0;i<n;i++){
 		srand(time(NULL));

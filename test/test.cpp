@@ -1,3 +1,4 @@
+#include "GenomaProc.hh"
 #include "GA_Mutation.hh"
 
 int main(void){
