@@ -1,0 +1,24 @@
+Frame 1 HEAP INTRODUCTION
+> a heap is a specialized tree-based data structure that satisfies the heap property: If A is a parent node of B then the key of node A is ordered with respect to the key of node B with the same ordering applying across the heap
+> the highest key is in the root node (this kind of heap is called max heap)
+> the min-heap property: the value of each node is greater than or equal to the value of its parent, with the minimum-value element at the root.
+> the max-heap property: the value of each node is less than or equal to the value of its parent, with the maximum-value element at the root.
+
+Frame 2 HEAP FEATURES
+> heap is not a sorted structure and can be regarded as partially ordered
+> is no particular relationship among nodes on any given level
+> A heap is a useful data structure when you need to remove the object with the highest (or lowest) priority.
+
+Frame 3 HEAP FEATURES
+
+Frame 4 HEAP FUNCTIONS
+> Insert 
+    Add the element to the bottom level of the heap.
+    Compare the added element with its parent; if they are in the correct order, stop.
+    If not, swap the element with its parent and return to the previous step.
+    thus the insertion operation has a time complexity of O(log n).
+> Delete
+    Replace the root of the heap with the last element on the last level.
+    Compare the new root with its children; if they are in the correct order, stop.
+    If not, swap the element with one of its children and return to the previous step.
+

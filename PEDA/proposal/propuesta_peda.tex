@@ -1,0 +1,133 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[activeacute,english]{babel}
+\usepackage[vmargin=4cm,tmargin=3cm,hmargin=2cm,letterpaper]{geometry}%
+\usepackage{helvet}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{tabls}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{listings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{plot}
+\usepackage{wrapfig}
+\usetikzlibrary{arrows,decorations,snakes,backgrounds,fit,calc,through,scopes,positioning,automata,chains,er,fadings,calendar,matrix,mindmap,folding,patterns,petri,plothandlers,plotmarks,shadows,shapes,shapes.arrows,topaths,trees}
+
+\lstset{% general command to set parameter(s)
+%   basicstyle=\small,
+  % print whole listing small
+%   keywordstyle=\color{black}\bfseries\underbar,
+  % underlined bold black keywords
+%   identifierstyle=,
+  % nothing happens
+%   commentstyle=\color{white}, % white comments
+%   stringstyle=\ttfamily,
+  % typewriter type for strings
+  showstringspaces=false}
+  % no special string spaces
+%\DeclareGraphicsExtensions{.bmp,.png,.pdf,.jpg,.eps}
+\pagestyle{fancy}
+\color{black}
+\fancyhead{}
+\renewcommand{\headrule}{\hrule\vspace*{0.5mm}\rule{\linewidth}{0.8mm}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{/home/luis/Documents/estructuras}}
+\lhead{\includegraphics[width=2cm]{logoucr.eps}}
+\rhead{\includegraphics[width=3cm]{eie-text-gray-6x3cm.eps}}
+\chead{UNIVERSITY OF COSTA RICA\\FACULTY ENGINEERING\\ELECTRICAL ENGINENEERING SCHOOL\\\textbf{DATA STRUCTURES AND ALGORITHMS ABSTRACT\\ FOR ENGINEERING}\\IE-0217\\CYCLE I 2014\\BIBLIOGRAPHIC RESEARCH 1}
+
+\lfoot{}%
+\cfoot{}%
+%\cfoot{\thepage\ de \pageref{LastPage}}%
+\rfoot{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uic}{black} %user-input color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uim}{\\} %user-input marker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\userinput}[1]{\textcolor{\uic}{\uim#1\uim}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}\vspace*{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\Huge
+\userinput{Maze generation and solving algorithms}
+\vspace*{1cm}
+\end{center}
+
+\noindent
+\small\baselineskip=14pt
+\textbf{Student:} \userinput{Ernesto C\'espedes}\\
+\textbf{Student:} \userinput{Ricardo Chac\'on}\\
+\textbf{Student:} \userinput{Luis Sergio Yannicelli Vargas}\\
+%\textbf{License:} \userinput{A87086}\\
+%\textbf{Email:} \textit{lsyannnicelli@gmail.com}\\
+
+\section{Introduction}
+
+Mazes are an important aplication is often used for entertainment and for therapy about atentional deficit for example. Algorithms for mazes are interesting because they use many methods to implement a solution, they use graph method, and simple methods as Tremaux algorithm, among others.
+
+\section{Objectives}
+
+\subsection{General Objective}
+
+To develop maze generation and solving algorithm.
+
+\subsection{Specific Objectives}
+
+Specific Objectives are:\\
+
+\begin{enumerate}
+\item To develop maze generation algorithm.
+\item To develop maze solving algorithm.
+\item To create graphical interfase for the algorithms.
+\end{enumerate}
+
+\section{Methodology}
+
+In this project, bibliographic research will be made about algorithm's data structure. Data will be obtained from the following sources: books, internet references, scientific articles, teacher's consultation, among others.\\
+
+Data structure, computing animations and problems examples, will be shown during class. Article will have figures and equations to exemplify applications. Also, efficiency and complexity will be analized. Algorithms implemented by another authors will be studied in order to get a robust implementation in our algorithm.\\
+
+This algorithms will be implemented in C++ language.
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{maze}
+Consulted  june 5, 2014: www.cplusplus.com/forum/general/6919/
+
+\bibitem{prim}
+Consulted  june 6, 2014: http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
+
+\bibitem{lee}
+Consulted  june 6, 2014: http://users.eecs.northwestern.edu/~haizhou/357/lec6.pdf
+
+\bibitem{tremaux}
+Consulted  june 6, 2014: http://www.primaryobjects.com/CMS/Article152.aspx
+
+\bibitem{wall_follower}
+Consulted  june 6, 2014: http://stackoverflow.com/questions/9191428/maze-solving-algorithm-in-c
+
+\bibitem{right-hand}
+Consulted  june 8, 2014: http://geniusdevils.com/2013/02/simple-maze-solving-algorithmthe-right-hand-rule/
+
+
+\end{thebibliography}
+
+\end{document}
